@@ -1,0 +1,260 @@
+{
+    "name": "wall",
+    "params": {
+		"repeateble": true,
+		"multiplied": true,
+		"entrance_data": [
+			"scale"
+		]
+    },
+	"children": [
+		"half_length_brick_body": "  ",
+		"half_length_bottom_divider": "__",
+		"divider": "|",
+		"string_end_symbol": "\n"
+	],
+	"states": [
+		{
+			"state_name": "default",
+			"creation_method": "custom",
+			"creation_variants": [
+				{
+					"name": "single",
+					"steps": [
+						{
+							"name": "step_1",
+							"action": "increase",
+							"values": {
+								"variables": [
+									"divider",
+									"half_length_bottom_divider",
+									"half_length_bottom_divider",
+									"string_end_symbol"
+								]
+							}
+						},
+						{
+							"name": "step_3",
+							"action": "increase",
+							"values": {
+								"variables": [
+									"half_length_bottom_divider",
+									"divider",
+									"half_length_bottom_divider",
+									"string_end_symbol"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "multiple",
+					"steps": [
+						{
+							"name": "step_1",
+							"action": "repeat",
+							"values": {
+								"amount_parameter": "scale",
+								"amount": -1,
+								"steps": [
+									{
+										"name": "step_1.1",
+										"action": "increase",
+										"values": {
+											"variables": [
+												"divider"
+											]
+										}
+									},
+									{
+										"name": "step_1.2",
+										"action": "repeat",
+										"values": {
+											"amount_parameter": "scale",
+											"steps": [
+												{
+													"name": "step_1.2.1",
+													"action": "increase",
+													"values": {
+														"variables": [
+															"half_length_brick_body",
+															"half_length_brick_body"
+														]
+													}
+												}
+											]
+										}
+									},
+									{
+										"name": "step_1.3",
+										"action": "increase",
+										"values": {
+											"variables": [
+												"string_end_symbol"
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"name": "step_2.1"
+							"action": "increase",
+							"values": {
+								"variables": [
+									"divider"
+								]
+							}
+						},
+						{
+							"name": "step_2.2"
+							"action": "repeat",
+							"values": {
+								"amount_parameter": "scale",
+								"steps": [
+									{
+										"name": "step_2.2.1",
+										"action": "increase",
+										"values": {
+											"variables": [
+												"half_length_bottom_divider",
+												"half_length_bottom_divider"
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"name": "step_2.3"
+							"action": "increase",
+							"values": {
+								"variables": [
+									"string_end_symbol"
+								]
+							}
+						},
+						{
+							"name": "step_3",
+							"action": "repeat",
+							"values": {
+								"amount_parameter": "scale",
+								"amount": -1,
+								"steps": [
+									{
+										"name": "step_3.1",
+										"action": "repeat",
+										"values": {
+											"amount": "scale",
+											"steps": [
+												{
+													"name": "step_3.1.1",
+													"action": "increase",
+													"values": {
+														"variables": [
+															"half_length_brick_body"
+														]
+													}
+												}
+											]
+										}
+									},
+									{
+										"name": "step_3.2",
+										"action": "increase",
+										"values": {
+											"variables": [
+												"divider"
+											]
+										}
+									},
+									{
+										"name": "step_3.3",
+										"action": "repeat",
+										"values": {
+											"amount": "scale",
+											"steps": [
+												{
+													"name": "step_3.3.1",
+													"action": "increase",
+													"values": {
+														"variables": [
+															"half_length_brick_body"
+														]
+													}
+												}
+											]
+										}
+									},
+									{
+										"name": "step_3.4",
+										"action": "increase",
+										"values": {
+											"variables": [
+												"string_end_symbol"
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"name": "step_4.1"
+							"action": "repeat",
+							"values": {
+								"amount": "scale",
+								"steps": [
+									{
+										"name": "step_4.1.1",
+										"action": "increase",
+										"values": {
+											"variables": [
+												"half_length_bottom_divider"
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"name": "step_4.2"
+							"action": "increase",
+							"values": {
+								"variables": [
+									"divider"
+								]
+							}
+						},
+						{
+							"name": "step_4.3"
+							"action": "repeat",
+							"values": {
+								"amount": "scale",
+								"steps": [
+									{
+										"name": "step_4.3.1",
+										"action": "increase",
+										"values": {
+											"variables": [
+												"half_length_bottom_divider"
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"name": "step_4.4"
+							"action": "increase",
+							"values": {
+								"variables": [
+									"string_end_symbol"
+								]
+							}
+						}
+					]
+				} 
+			]
+		}
+	]
+}
