@@ -8,6 +8,9 @@
     <Filter Include="win32\src">
       <UniqueIdentifier>{c08e3d2f-7a13-43d2-a10b-9eac263a30f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="win32\src\Types">
+      <UniqueIdentifier>{0f2a532c-3611-444b-8e9d-7ae9ed06f7df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZeteraChronilces.cpp">
@@ -16,10 +19,25 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>win32\src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\DataManager.cpp">
+      <Filter>win32\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameDirector.cpp">
+      <Filter>win32\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>win32\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DataManager.h">
+      <Filter>win32\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameDirector.h">
+      <Filter>win32\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Types\DataTypes.h">
+      <Filter>win32\src\Types</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
