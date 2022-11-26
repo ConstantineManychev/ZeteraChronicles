@@ -1,5 +1,7 @@
 #include "GameDirector.h"
 
+#include "windows.h"
+
 GameDirector::GameDirector()
 	: mGameAspectRatio(eGameAspectRatio::_UNDEF)
 {
@@ -21,5 +23,5 @@ void GameDirector::onInit()
 {
 	HANDLE hWnd = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD bufferSize = { 80, 50 };
-	SetConsoleScreenBufferSize(wHnd, bufferSize);
+	//SetConsoleScreenBufferSize(wHnd, bufferSize);
 }

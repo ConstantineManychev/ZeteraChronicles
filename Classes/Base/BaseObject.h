@@ -6,7 +6,7 @@
 #include "vector"
 #include "map"
 
-namespace myGame {
+//namespace myGame {
 
 	class  BaseObject
 	{
@@ -28,5 +28,5 @@ namespace myGame {
 		BaseObject();
 		~BaseObject();
 	};
-}
+//}
 #endif // _BASE_OBJECT_H_

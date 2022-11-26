@@ -1,6 +1,6 @@
-#include "AppDelegate.h"
+//#include "AppDelegate"
 
-namespace myGame {
+//namespace myGame {
 
 	/*BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
 	{
@@ -10,9 +10,9 @@ namespace myGame {
 	int main()
 	{
 		//SetConsoleCtrlHandler(CtrlHandler, TRUE);
-		AppDelegate app;
+		//AppDelegate app;
 
 		return 0;
 	}
 
-}
+//}

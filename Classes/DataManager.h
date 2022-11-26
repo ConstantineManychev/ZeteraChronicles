@@ -1,7 +1,7 @@
 #ifndef  _DATA_MANAGER_H_
 #define  _DATA_MANAGER_H_
 
-namespace myGame {
+//namespace myGame {
 
 	class  DataManager
 	{
@@ -18,5 +18,5 @@ namespace myGame {
 
 #define DM DataManager::getInstance()
 
-}
+//}
 #endif // _DATA_MANAGER_H_

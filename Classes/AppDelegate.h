@@ -3,7 +3,7 @@
 
 #include "Types/DataTypes.h"
 
-namespace myGame {
+//namespace myGame {
 
 	class  AppDelegate
 	{
@@ -24,6 +24,6 @@ namespace myGame {
 
 #define DM AppDelegate::getInstance()
 
-}
+//}
 
 #endif // _APP_DELEGATE_H_

@@ -2,9 +2,8 @@
 #define  _GAME_DIRECTOR_H_
 
 #include "Types/DataTypes.h"
-#include "windows.h"
 
-namespace myGame {
+//namespace myGame {
 
 	enum class eGameAspectRatio
 	{
@@ -35,5 +34,5 @@ namespace myGame {
 
 #define DM GameDirector::getInstance()
 
-}
+//}
 #endif // _GAME_DIRECTOR_H_
