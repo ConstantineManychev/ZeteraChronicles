@@ -1,19 +1,22 @@
 #ifndef  _DATA_MANAGER_H_
 #define  _DATA_MANAGER_H_
 
-class  DataManager
-{
-private:
-	DataManager();
+namespace myGame {
 
-public:
-	void onInit();
+	class  DataManager
+	{
+	private:
+		DataManager();
 
-	virtual ~DataManager();
+	public:
+		void onInit();
 
-	static DataManager* getInstance();
-};
+		virtual ~DataManager();
+
+		static DataManager* getInstance();
+	};
 
 #define DM DataManager::getInstance()
 
+}
 #endif // _DATA_MANAGER_H_

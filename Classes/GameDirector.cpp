@@ -19,5 +19,7 @@ GameDirector* GameDirector::getInstance()
 
 void GameDirector::onInit()
 {
-
+	HANDLE hWnd = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD bufferSize = { 80, 50 };
+	SetConsoleScreenBufferSize(wHnd, bufferSize);
 }

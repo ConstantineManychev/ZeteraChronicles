@@ -1,0 +1,15 @@
+{
+    "meta": {},
+    "keys": {
+        "TT_NEW_GAME_TITLE": "New game",
+        "TT_CONTINUE_TITLE": "Continue",
+		"TT_SETTINGS_TITLE": "Settings",
+        "TT_EXIT_TITLE": "Exit",
+		
+		"TT_LANGUAGE_TITLE": "Language",
+		"TT_MUSIC_VOLUME_TITLE": "Music volume",
+		"TT_SOUND_VOLUME_TITLE": "Sounds volume",
+		"TT_VOLUME_TITLE": "Volume",
+		"TT_FULL_SCREEN_TITLE": "Full screen"
+    }
+}

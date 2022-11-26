@@ -1,8 +1,6 @@
 {
-    "view_id": "location_1_room_1_config",
-    "type_id": "BGDView",
     "name": "location_1_room_1_config",
-    "custom_id": "location_1_room_1_config",
+    "custom_id": "location_1_room_1",
     "params": {
         "size": {
             "width": 1.0,
@@ -10,5 +8,6 @@
         }
     },
     "children": {
+		
 	}
 }

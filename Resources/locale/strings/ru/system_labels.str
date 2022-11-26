@@ -1,0 +1,15 @@
+{
+    "meta": {},
+    "keys": {
+        "TT_NEW_GAME_TITLE": "Новая игра",
+        "TT_CONTINUE_TITLE": "Продолжить",
+		"TT_SETTINGS_TITLE": "Настройки",
+        "TT_EXIT_TITLE": "Выход",
+		
+		"TT_LANGUAGE_TITLE": "Язык",
+		"TT_MUSIC_VOLUME_TITLE": "Громкость музыки",
+		"TT_SOUND_VOLUME_TITLE": "Громкость звуков",
+		"TT_VOLUME_TITLE": "Громкость",
+		"TT_FULL_SCREEN_TITLE": "Полноэкранный режим"
+    }
+}

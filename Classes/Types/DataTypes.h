@@ -8,10 +8,22 @@ struct sSize
 {
 	int width;
 	int height;
+};
+
+struct sVec
+{
+	int x;
+	int y;
+};
+
+struct sSize3
+{
+	int width;
+	int height;
 	int depth;
 };
 
-struct sPosition
+struct sVec3
 {
 	int x;
 	int y;

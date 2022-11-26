@@ -1,32 +1,39 @@
 #ifndef  _GAME_DIRECTOR_H_
 #define  _GAME_DIRECTOR_H_
 
-enum class eGameAspectRatio
-{
-	_UNDEF = 0,
-	_4X3,
-	_16X9,
-	_19_5X9,
-	_14_4X9,
-	_18X9
-};
+#include "Types/DataTypes.h"
+#include "windows.h"
 
-class  GameDirector
-{
-private:
-	eGameAspectRatio mGameAspectRatio;
+namespace myGame {
 
-private:
-	GameDirector();
+	enum class eGameAspectRatio
+	{
+		_UNDEF = 0,
+		_4X3,
+		_16X9,
+		_19_5X9,
+		_14_4X9,
+		_18X9
+	};
 
-public:
-	void onInit();
+	class  GameDirector
+	{
+	private:
+		eGameAspectRatio mGameAspectRatio;
+		sSize mGameScreenSize;
 
-	virtual ~GameDirector();
+	private:
+		GameDirector();
 
-	static GameDirector* getInstance();
-};
+	public:
+		void onInit();
+
+		virtual ~GameDirector();
+
+		static GameDirector* getInstance();
+	};
 
 #define DM GameDirector::getInstance()
 
+}
 #endif // _GAME_DIRECTOR_H_

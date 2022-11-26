@@ -1,15 +1,18 @@
-#include <iostream>
-#include <windows.h>
+#include "AppDelegate.h"
 
-BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
-{
-	return TRUE;
-}
+namespace myGame {
 
-int main()
-{
-	SetConsoleCtrlHandler(CtrlHandler, TRUE);
-    std::cout << "Hello World!\n";
+	/*BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
+	{
+		return TRUE;
+	}*/
 
-	return 0;
+	int main()
+	{
+		//SetConsoleCtrlHandler(CtrlHandler, TRUE);
+		AppDelegate app;
+
+		return 0;
+	}
+
 }

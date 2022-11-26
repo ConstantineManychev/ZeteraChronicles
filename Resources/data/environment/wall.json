@@ -7,12 +7,12 @@
 			"scale"
 		]
     },
-	"children": [
+	"children": {
 		"half_length_brick_body": "  ",
 		"half_length_bottom_divider": "__",
 		"divider": "|",
 		"string_end_symbol": "\n"
-	],
+	},
 	"states": [
 		{
 			"state_name": "default",
