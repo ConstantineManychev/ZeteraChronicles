@@ -1,4 +1,4 @@
-//#include "AppDelegate"
+#include "..\Classes\AppDelegate.h"
 
 //namespace myGame {
 
@@ -10,7 +10,8 @@
 	int main()
 	{
 		//SetConsoleCtrlHandler(CtrlHandler, TRUE);
-		//AppDelegate app;
+		AD->onInit();
+		AD->run();
 
 		return 0;
 	}

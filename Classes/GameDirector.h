@@ -1,6 +1,7 @@
 #ifndef  _GAME_DIRECTOR_H_
 #define  _GAME_DIRECTOR_H_
 
+#include "windows.h"
 #include "Types/DataTypes.h"
 
 //namespace myGame {
@@ -18,11 +19,17 @@
 	class  GameDirector
 	{
 	private:
+		HWND mWindowsConsole;
 		eGameAspectRatio mGameAspectRatio;
 		sSize mGameScreenSize;
 
 	private:
 		GameDirector();
+
+		void setScreenSize(sSize& aSize);
+		void setFullScreen(bool aIsFullScreen);
+
+		void CenterWindow(HWND hwnd, HWND hwndCenter);
 
 	public:
 		void onInit();
@@ -30,9 +37,11 @@
 		virtual ~GameDirector();
 
 		static GameDirector* getInstance();
+
+		void Draw();
 	};
 
-#define DM GameDirector::getInstance()
+#define GD GameDirector::getInstance()
 
 //}
 #endif // _GAME_DIRECTOR_H_

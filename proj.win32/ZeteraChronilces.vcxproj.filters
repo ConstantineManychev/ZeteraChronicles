@@ -14,6 +14,9 @@
     <Filter Include="win32\src\Basic">
       <UniqueIdentifier>{e197f1c7-7954-4fde-ad44-20d5985008e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="win32\src\Views">
+      <UniqueIdentifier>{6bdaff99-bbb8-4db1-8f70-8e7a87b3ad65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZeteraChronilces.cpp">
@@ -31,6 +34,9 @@
     <ClCompile Include="..\Classes\Base\BaseObject.cpp">
       <Filter>win32\src\Basic</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\views\MainMenu.cpp">
+      <Filter>win32\src\Views</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h">
@@ -47,6 +53,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Base\BaseObject.h">
       <Filter>win32\src\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\views\MainMenu.h">
+      <Filter>win32\src\Views</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

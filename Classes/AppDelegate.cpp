@@ -1,8 +1,9 @@
 #include "AppDelegate.h"
-#include <windows.h>
+#include "windows.h"
+#include "GameDirector.h"
 
 AppDelegate::AppDelegate()
-	: mDefaultScreenSize ()
+	: mAppTime (0)
 {
 
 }
@@ -20,14 +21,23 @@ AppDelegate* AppDelegate::getInstance()
 
 void AppDelegate::onInit()
 {
-
+	GD->onInit();
 }
 
-void AppDelegate::setDefaultScreenSize()
+void AppDelegate::run()
 {
-	auto defaultScreenWidth = GetSystemMetrics(SM_CXSCREEN);
-	auto defaultScreenHeigh = GetSystemMetrics(SM_CYSCREEN);
+	update(0.0f);
+}
 
-	mDefaultScreenSize.width = defaultScreenWidth;
-	mDefaultScreenSize.height = defaultScreenHeigh;
+void AppDelegate::update(float aDelta)
+{
+	if (isCloseApp)
+	{
+
+	}
+}
+
+void AppDelegate::setDefaultScreenSize(sSize& aSize)
+{
+	mDefaultScreenSize = aSize;
 }
