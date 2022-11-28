@@ -19,6 +19,10 @@
 	class  GameDirector
 	{
 	private:
+		sSize mDefaultScreenSize;
+		int mAppTime;
+		bool isCloseApp;
+
 		HWND mWindowsConsole;
 		eGameAspectRatio mGameAspectRatio;
 		sSize mGameScreenSize;
@@ -26,10 +30,13 @@
 	private:
 		GameDirector();
 
+		void setDefaultScreenSize(sSize& aSize);
 		void setScreenSize(sSize& aSize);
 		void setFullScreen(bool aIsFullScreen);
 
 		void CenterWindow(HWND hwnd, HWND hwndCenter);
+
+		void update(float aDelta);
 
 	public:
 		void onInit();
@@ -39,6 +46,8 @@
 		static GameDirector* getInstance();
 
 		void Draw();
+
+		void run();
 	};
 
 #define GD GameDirector::getInstance()

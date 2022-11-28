@@ -1,8 +1,6 @@
 #ifndef  _APP_DELEGATE_H_
 #define  _APP_DELEGATE_H_
 
-#include "Types/DataTypes.h"
-
 #define CC_PLATFORM_UNKNOWN            0
 #define CC_PLATFORM_IOS                1
 #define CC_PLATFORM_ANDROID            2
@@ -55,24 +53,14 @@
 	class  AppDelegate
 	{
 	private:
-		sSize mDefaultScreenSize;
-		int mAppTime;
-		bool isCloseApp;
 
 	private:
-		void update(float aDelta);
 
 	public:
 		void onInit();
 
 		AppDelegate();
 		virtual ~AppDelegate();
-
-		static AppDelegate* getInstance();
-
-		void run();
-
-		void setDefaultScreenSize(sSize& aSize);
 	};
 
 #define AD AppDelegate::getInstance()

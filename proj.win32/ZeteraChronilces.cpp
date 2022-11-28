@@ -10,8 +10,8 @@
 	int main()
 	{
 		//SetConsoleCtrlHandler(CtrlHandler, TRUE);
-		AD->onInit();
-		AD->run();
+		AppDelegate app;
+		app.onInit();
 
 		return 0;
 	}

@@ -5,6 +5,7 @@
 
 GameDirector::GameDirector()
 	: mGameAspectRatio(eGameAspectRatio::_UNDEF)
+	, mAppTime(0)
 {
 
 }
@@ -30,10 +31,17 @@ void GameDirector::onInit()
 	defaultScreenSize.width = GetSystemMetrics(SM_CXSCREEN);
 	defaultScreenSize.height = GetSystemMetrics(SM_CYSCREEN);
 
-	AD->setDefaultScreenSize(defaultScreenSize);
+	setDefaultScreenSize(defaultScreenSize);
 
 	setScreenSize(defaultScreenSize);
 	setFullScreen(true);
+}
+
+
+
+void GameDirector::setDefaultScreenSize(sSize& aSize)
+{
+	mDefaultScreenSize = aSize;
 }
 
 void GameDirector::setScreenSize(sSize& aSize)
@@ -132,4 +140,19 @@ void GameDirector::CenterWindow(HWND hwnd, HWND hwndCenter)
 
 	// Map screen coordinates to child coordinates.
 	SetWindowPos(hwnd, NULL, xLeft, yTop, 0, 0, SWP_NOSIZE | SWP_NOZORDER | SWP_NOACTIVATE);
+}
+
+
+
+void GameDirector::run()
+{
+	update(0.0f);
+}
+
+void GameDirector::update(float aDelta)
+{
+	if (isCloseApp)
+	{
+
+	}
 }
