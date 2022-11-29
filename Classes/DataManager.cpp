@@ -1,6 +1,5 @@
 #include "DataManager.h"
 
-using namespace cocos2d;
 
 DataManager::DataManager()
 {

@@ -5,7 +5,7 @@
 #include "cocos2d.h"
 #include "Types/DataTypes.h"
 
-namespace cocos2d {
+//namespace cocos2d {
 
 enum class eGameAspectRatio
 {
@@ -20,19 +20,19 @@ enum class eGameAspectRatio
 class  GameDirector
 {
 private:
-	Size mDefaultScreenSize;
+	cocos2d::Size mDefaultScreenSize;
 	int mAppTime;
 	bool isCloseApp;
 
-	HWND mWindowsConsole;
+	//HWND mWindowsConsole;
 	eGameAspectRatio mGameAspectRatio;
-	Size mGameScreenSize;
+	cocos2d::Size mGameScreenSize;
 
 private:
 	GameDirector();
 
-	void setDefaultScreenSize(Size& aSize);
-	void setScreenSize(Size& aSize);
+	void setDefaultScreenSize(cocos2d::Size& aSize);
+	void setScreenSize(cocos2d::Size& aSize);
 	void setFullScreen(bool aIsFullScreen);
 
 	void update(float aDelta);
@@ -51,5 +51,5 @@ public:
 
 #define GD GameDirector::getInstance()
 
-}
+//}
 #endif // _GAME_DIRECTOR_H_

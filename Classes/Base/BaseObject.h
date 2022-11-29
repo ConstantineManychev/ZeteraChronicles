@@ -6,7 +6,6 @@
 #include "vector"
 #include "map"
 
-namespace cocos2d {
 
 class  BaseObject
 {
@@ -29,6 +28,5 @@ public:
 	~BaseObject();
 };
 
-}
 
 #endif // _BASE_OBJECT_H_

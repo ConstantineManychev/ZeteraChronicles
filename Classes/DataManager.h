@@ -1,7 +1,6 @@
 #ifndef  _DATA_MANAGER_H_
 #define  _DATA_MANAGER_H_
 
-namespace cocos2d {
 
 class  DataManager
 {
@@ -18,5 +17,4 @@ public:
 
 #define DM DataManager::getInstance()
 
-}
 #endif // _DATA_MANAGER_H_

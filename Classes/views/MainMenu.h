@@ -6,7 +6,6 @@
 #include "vector"
 #include "map"
 
-namespace cocos2d {
 
 class  MainMenu
 	: BaseObject
@@ -23,6 +22,5 @@ public:
 	~MainMenu();
 };
 
-}
 
 #endif // _MAIN_MENU_H_

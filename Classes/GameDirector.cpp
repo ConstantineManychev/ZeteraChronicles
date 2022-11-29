@@ -2,7 +2,7 @@
 #include "AppDelegate.h"
 #include "Types/DataTypes.h"
 
-using namespace cocos2d;
+//using namespace cocos2d;
 
 GameDirector::GameDirector()
 	: mGameAspectRatio(eGameAspectRatio::_UNDEF)
@@ -26,10 +26,10 @@ GameDirector* GameDirector::getInstance()
 void GameDirector::onInit()
 {
 #if ( CC_TARGET_PLATFORM ==  CC_PLATFORM_WIN32)
-	mWindowsConsole = GetConsoleWindow();
+	//mWindowsConsole = GetConsoleWindow();
 #endif
 
-	Size defaultScreenSize;
+	cocos2d::Size defaultScreenSize;
 	defaultScreenSize.width = GetSystemMetrics(SM_CXSCREEN);
 	defaultScreenSize.height = GetSystemMetrics(SM_CYSCREEN);
 
@@ -41,12 +41,12 @@ void GameDirector::onInit()
 
 
 
-void GameDirector::setDefaultScreenSize(Size& aSize)
+void GameDirector::setDefaultScreenSize(cocos2d::Size& aSize)
 {
 	mDefaultScreenSize = aSize;
 }
 
-void GameDirector::setScreenSize(Size& aSize)
+void GameDirector::setScreenSize(cocos2d::Size& aSize)
 {
 #if ( CC_TARGET_PLATFORM ==  CC_PLATFORM_WIN32)
 	//MoveWindow(mWindowsConsole, 0, 0, aSize.width, aSize.height, TRUE);
@@ -62,12 +62,12 @@ void GameDirector::setFullScreen(bool aIsFullScreen)
 	{
 		//system("mode 650");
 		//SetConsoleDisplayMode(mWindowsConsole, CONSOLE_FULLSCREEN_MODE, 0);
-		SendMessage(mWindowsConsole, WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
+		//SendMessage(mWindowsConsole, WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
 	}
 	else
 	{
 		//SetConsoleDisplayMode(mWindowsConsole, CONSOLE_WINDOWED_MODE, 0);
-		ShowWindow(mWindowsConsole, SW_MAXIMIZE);
+		//ShowWindow(mWindowsConsole, SW_MAXIMIZE);
 		//SendMessage(mWindowsConsole, WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
 	}
 #endif

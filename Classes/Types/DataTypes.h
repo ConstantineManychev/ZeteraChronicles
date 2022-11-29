@@ -4,7 +4,6 @@
 #define UNDEFINED_STR "UNDEFINED"
 #define NONE_STR "NONE"
 
-namespace cocos2d {
 
 struct sSize
 {
@@ -32,6 +31,5 @@ struct sVec3
 	int z;
 };
 
-}
 
 #endif
