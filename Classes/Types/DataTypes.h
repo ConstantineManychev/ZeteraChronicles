@@ -4,6 +4,8 @@
 #define UNDEFINED_STR "UNDEFINED"
 #define NONE_STR "NONE"
 
+namespace cocos2d {
+
 struct sSize
 {
 	int width;
@@ -29,5 +31,7 @@ struct sVec3
 	int y;
 	int z;
 };
+
+}
 
 #endif

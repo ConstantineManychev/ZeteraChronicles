@@ -1,26 +1,28 @@
 #ifndef  _MAIN_MENU_H_
 #define  _MAIN_MENU_H_
 
-#include "../Base/BaseObject.h"
+#include "Base/BaseObject.h"
 #include "iostream"
 #include "vector"
 #include "map"
 
-//namespace myGame {
+namespace cocos2d {
 
-	class  MainMenu
-		: BaseObject
-	{
-	private:
+class  MainMenu
+	: BaseObject
+{
+private:
 
 
-	private:
+private:
 
-	public:
-		virtual void onInit();
+public:
+	virtual void onInit();
 
-		MainMenu();
-		~MainMenu();
-	};
-//}
+	MainMenu();
+	~MainMenu();
+};
+
+}
+
 #endif // _MAIN_MENU_H_

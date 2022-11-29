@@ -2,6 +2,8 @@
 #include "windows.h"
 #include "GameDirector.h"
 
+using namespace cocos2d;
+
 AppDelegate::AppDelegate()
 {
 

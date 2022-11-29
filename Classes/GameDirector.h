@@ -2,55 +2,54 @@
 #define  _GAME_DIRECTOR_H_
 
 #include "windows.h"
+#include "cocos2d.h"
 #include "Types/DataTypes.h"
 
-//namespace myGame {
+namespace cocos2d {
 
-	enum class eGameAspectRatio
-	{
-		_UNDEF = 0,
-		_4X3,
-		_16X9,
-		_19_5X9,
-		_14_4X9,
-		_18X9
-	};
+enum class eGameAspectRatio
+{
+	_UNDEF = 0,
+	_4X3,
+	_16X9,
+	_19_5X9,
+	_14_4X9,
+	_18X9
+};
 
-	class  GameDirector
-	{
-	private:
-		sSize mDefaultScreenSize;
-		int mAppTime;
-		bool isCloseApp;
+class  GameDirector
+{
+private:
+	Size mDefaultScreenSize;
+	int mAppTime;
+	bool isCloseApp;
 
-		HWND mWindowsConsole;
-		eGameAspectRatio mGameAspectRatio;
-		sSize mGameScreenSize;
+	HWND mWindowsConsole;
+	eGameAspectRatio mGameAspectRatio;
+	Size mGameScreenSize;
 
-	private:
-		GameDirector();
+private:
+	GameDirector();
 
-		void setDefaultScreenSize(sSize& aSize);
-		void setScreenSize(sSize& aSize);
-		void setFullScreen(bool aIsFullScreen);
+	void setDefaultScreenSize(Size& aSize);
+	void setScreenSize(Size& aSize);
+	void setFullScreen(bool aIsFullScreen);
 
-		void CenterWindow(HWND hwnd, HWND hwndCenter);
+	void update(float aDelta);
 
-		void update(float aDelta);
+public:
+	void onInit();
 
-	public:
-		void onInit();
+	virtual ~GameDirector();
 
-		virtual ~GameDirector();
+	static GameDirector* getInstance();
 
-		static GameDirector* getInstance();
+	void Draw();
 
-		void Draw();
-
-		void run();
-	};
+	void run();
+};
 
 #define GD GameDirector::getInstance()
 
-//}
+}
 #endif // _GAME_DIRECTOR_H_

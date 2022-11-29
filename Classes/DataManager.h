@@ -1,22 +1,22 @@
 #ifndef  _DATA_MANAGER_H_
 #define  _DATA_MANAGER_H_
 
-//namespace myGame {
+namespace cocos2d {
 
-	class  DataManager
-	{
-	private:
-		DataManager();
+class  DataManager
+{
+private:
+	DataManager();
 
-	public:
-		void onInit();
+public:
+	void onInit();
 
-		virtual ~DataManager();
+	virtual ~DataManager();
 
-		static DataManager* getInstance();
-	};
+	static DataManager* getInstance();
+};
 
 #define DM DataManager::getInstance()
 
-//}
+}
 #endif // _DATA_MANAGER_H_

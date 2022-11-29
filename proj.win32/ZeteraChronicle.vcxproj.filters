@@ -7,8 +7,20 @@
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src">
+    <Filter Include="win32\src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32\src\Types">
+      <UniqueIdentifier>{39cc3f7a-26ee-46cb-bda2-5ac64e890635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32\src\Views">
+      <UniqueIdentifier>{ec05c84c-e8cc-4b96-a6dc-34f3154b2b8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32\src\Base">
+      <UniqueIdentifier>{90d58bd0-811e-4293-a30a-3ec048687029}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32\src\Helpers">
+      <UniqueIdentifier>{4b491b26-e708-470b-aeb0-c54129cce53c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -16,10 +28,19 @@
       <Filter>win32</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>src</Filter>
+      <Filter>win32\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="..\Classes\DataManager.cpp">
+      <Filter>win32\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameDirector.cpp">
+      <Filter>win32\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Base\BaseObject.cpp">
+      <Filter>win32\src\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\views\MainMenu.cpp">
+      <Filter>win32\src\Views</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -27,10 +48,22 @@
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>src</Filter>
+      <Filter>win32\src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\Classes\DataManager.h">
+      <Filter>win32\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameDirector.h">
+      <Filter>win32\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Base\BaseObject.h">
+      <Filter>win32\src\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\views\MainMenu.h">
+      <Filter>win32\src\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Types\DataTypes.h">
+      <Filter>win32\src\Types</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
