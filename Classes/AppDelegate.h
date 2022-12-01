@@ -5,6 +5,9 @@
 
 class  AppDelegate : private cocos2d::Application
 {
+private:
+	void updateWindow(cocos2d::GLView* aGLView);
+
 public:
 	AppDelegate();
 	virtual ~AppDelegate();

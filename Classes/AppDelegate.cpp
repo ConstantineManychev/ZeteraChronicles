@@ -45,18 +45,13 @@ static int register_all_packages()
 	return 0;
 }
 
-bool AppDelegate::applicationDidFinishLaunching() {
+bool AppDelegate::applicationDidFinishLaunching()
+{
 
 	auto director = Director::getInstance();
 	auto glview = director->getOpenGLView();
-	if (!glview) {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-		glview = GLViewImpl::createWithRect("ZeteraChronicle", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
-#else
-		glview = GLViewImpl::create("ZeteraChronicle");
-#endif
-		director->setOpenGLView(glview);
-	}
+	updateWindow(glview);
+	director->setOpenGLView(glview);
 
 	director->setDisplayStats(true);
 
@@ -108,4 +103,24 @@ void AppDelegate::applicationWillEnterForeground() {
 	SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 	SimpleAudioEngine::getInstance()->resumeAllEffects();
 #endif
+}
+
+void AppDelegate::updateWindow(cocos2d::GLView* aGLView)
+{
+	bool isFullScreen = true;
+	if (!aGLView)
+	{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
+		if (isFullScreen)
+		{
+			aGLView = GLViewImpl::createWithFullScreen("ZeteraChronicle");
+		}
+		else
+		{
+			aGLView = GLViewImpl::createWithRect("ZeteraChronicle", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+		}
+#else
+		aGLView = GLViewImpl::create("ZeteraChronicle");
+#endif
+	}
 }
