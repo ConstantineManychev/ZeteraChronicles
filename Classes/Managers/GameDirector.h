@@ -1,7 +1,6 @@
 #ifndef  _GAME_DIRECTOR_H_
 #define  _GAME_DIRECTOR_H_
 
-#include "windows.h"
 #include "cocos2d.h"
 #include "Types/DataTypes.h"
 

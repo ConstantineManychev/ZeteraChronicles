@@ -7,5 +7,29 @@
         }
     },
     "children": {
+		"new_game": {
+			"name": "new_game",
+			"creation": {
+				"lc_id": "TT_NEW_GAME_TITLE"
+			}
+		},
+		"continue": {
+			"name": "new_game",
+			"creation": {
+				"lc_id": "TT_CONTINUE_TITLE"
+			}
+		},
+		"settings": {
+			"name": "new_game",
+			"creation": {
+				"lc_id": "TT_SETTINGS_TITLE"
+			}
+		},
+		"exit": {
+			"name": "new_game",
+			"creation": {
+				"lc_id": "TT_EXIT_TITLE"
+			}
+		}
 	}
 }

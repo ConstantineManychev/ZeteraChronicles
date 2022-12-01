@@ -22,6 +22,12 @@
     <Filter Include="win32\src\Helpers">
       <UniqueIdentifier>{4b491b26-e708-470b-aeb0-c54129cce53c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="win32\src\Views\Scenes">
+      <UniqueIdentifier>{f86814ac-56e8-4c87-b2df-eb1e42267b79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32\src\Managers">
+      <UniqueIdentifier>{89a78461-5da4-4a4c-afac-4b867f136642}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -33,14 +39,17 @@
     <ClCompile Include="..\Classes\DataManager.cpp">
       <Filter>win32\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GameDirector.cpp">
-      <Filter>win32\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Base\BaseObject.cpp">
       <Filter>win32\src\Base</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\views\MainMenu.cpp">
       <Filter>win32\src\Views</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Views\Scenes\BaseScene.cpp">
+      <Filter>win32\src\Views\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Managers\GameDirector.cpp">
+      <Filter>win32\src\Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,9 +62,6 @@
     <ClInclude Include="..\Classes\DataManager.h">
       <Filter>win32\src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GameDirector.h">
-      <Filter>win32\src</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Base\BaseObject.h">
       <Filter>win32\src\Base</Filter>
     </ClInclude>
@@ -64,6 +70,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Types\DataTypes.h">
       <Filter>win32\src\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Views\Scenes\BaseScene.h">
+      <Filter>win32\src\Views\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Managers\GameDirector.h">
+      <Filter>win32\src\Managers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
