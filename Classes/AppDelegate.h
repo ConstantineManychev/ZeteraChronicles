@@ -3,10 +3,10 @@
 
 #include "cocos2d.h"
 
+NS_CC_BEGIN
 class  AppDelegate : private cocos2d::Application
 {
 private:
-	void updateWindow(cocos2d::GLView* aGLView);
 
 public:
 	AppDelegate();
@@ -20,5 +20,5 @@ public:
 
 	virtual void applicationWillEnterForeground();
 };
-
+NS_CC_END
 #endif // _APP_DELEGATE_H_

@@ -1,4 +1,5 @@
 #include "AppDelegate.h"
+#include "Managers/GameDirector.h"
 
 
 #if USE_AUDIO_ENGINE && USE_SIMPLE_AUDIO_ENGINE
@@ -15,10 +16,6 @@ using namespace CocosDenshion;
 
 USING_NS_CC;
 
-static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
-static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 320);
-static cocos2d::Size mediumResolutionSize = cocos2d::Size(1024, 768);
-static cocos2d::Size largeResolutionSize = cocos2d::Size(2048, 1536);
 
 AppDelegate::AppDelegate()
 {
@@ -47,38 +44,12 @@ static int register_all_packages()
 
 bool AppDelegate::applicationDidFinishLaunching()
 {
-
-	auto director = Director::getInstance();
-	auto glview = director->getOpenGLView();
-	updateWindow(glview);
-	director->setOpenGLView(glview);
-
-	director->setDisplayStats(true);
-
-	director->setAnimationInterval(1.0f / 60);
-
-	glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
-	auto frameSize = glview->getFrameSize();
-
-	if (frameSize.height > mediumResolutionSize.height)
-	{
-		director->setContentScaleFactor(MIN(largeResolutionSize.height / designResolutionSize.height, largeResolutionSize.width / designResolutionSize.width));
-	}
-
-	else if (frameSize.height > smallResolutionSize.height)
-	{
-		director->setContentScaleFactor(MIN(mediumResolutionSize.height / designResolutionSize.height, mediumResolutionSize.width / designResolutionSize.width));
-	}
-	else
-	{
-		director->setContentScaleFactor(MIN(smallResolutionSize.height / designResolutionSize.height, smallResolutionSize.width / designResolutionSize.width));
-	}
+	auto gameDirector = GD->getInstance();
+	gameDirector->onInit();
 
 	register_all_packages();
 
-	//auto scene = HelloWorld::createScene();
-
-	//director->runWithScene(scene);
+	gameDirector->openScene();
 
 	return true;
 }
@@ -103,24 +74,4 @@ void AppDelegate::applicationWillEnterForeground() {
 	SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 	SimpleAudioEngine::getInstance()->resumeAllEffects();
 #endif
-}
-
-void AppDelegate::updateWindow(cocos2d::GLView* aGLView)
-{
-	bool isFullScreen = true;
-	if (!aGLView)
-	{
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-		if (isFullScreen)
-		{
-			aGLView = GLViewImpl::createWithFullScreen("ZeteraChronicle");
-		}
-		else
-		{
-			aGLView = GLViewImpl::createWithRect("ZeteraChronicle", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
-		}
-#else
-		aGLView = GLViewImpl::create("ZeteraChronicle");
-#endif
-	}
 }

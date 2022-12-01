@@ -153,6 +153,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Managers\GameDirector.cpp" />
     <ClCompile Include="..\Classes\views\MainMenu.cpp" />
     <ClCompile Include="..\Classes\Views\Scenes\BaseScene.cpp" />
+    <ClCompile Include="..\Classes\Views\Scenes\HelloWorldScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Types\DataTypes.h" />
     <ClInclude Include="..\Classes\views\MainMenu.h" />
     <ClInclude Include="..\Classes\Views\Scenes\BaseScene.h" />
+    <ClInclude Include="..\Classes\Views\Scenes\HelloWorldScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +181,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

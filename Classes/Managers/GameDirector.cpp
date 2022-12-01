@@ -1,12 +1,17 @@
 #include "GameDirector.h"
 #include "AppDelegate.h"
+#include "base/CCDirector.h"
 #include "Types/DataTypes.h"
+#include "Views/Scenes/HelloWorldScene.h"
 
-//using namespace cocos2d;
+USING_NS_CC;
 
 GameDirector::GameDirector()
-	: mGameAspectRatio(eGameAspectRatio::_UNDEF)
+	: mGLView(nullptr)
+	, mGameAspectRatio(eGameAspectRatio::_UNDEF)
 	, mAppTime(0)
+	, mIsFullScreen(true)
+	, mScreenSize(Size(1024, 768))
 {
 
 }
@@ -25,68 +30,77 @@ GameDirector* GameDirector::getInstance()
 
 void GameDirector::onInit()
 {
-#if ( CC_TARGET_PLATFORM ==  CC_PLATFORM_WIN32)
-	//mWindowsConsole = GetConsoleWindow();
-#endif
+	auto director = Director::getInstance();
+	auto mGLView = director->getOpenGLView();
 
-	cocos2d::Size defaultScreenSize;
-	defaultScreenSize.width = GetSystemMetrics(SM_CXSCREEN);
-	defaultScreenSize.height = GetSystemMetrics(SM_CYSCREEN);
+	updateWindowSize();
 
-	setDefaultScreenSize(defaultScreenSize);
-
-	setScreenSize(defaultScreenSize);
-	setFullScreen(true);
 }
 
 
 
-void GameDirector::setDefaultScreenSize(cocos2d::Size& aSize)
+void GameDirector::setScreenSize(Size& aSize)
 {
-	mDefaultScreenSize = aSize;
+	mScreenSize = aSize;
 }
 
-void GameDirector::setScreenSize(cocos2d::Size& aSize)
+Size GameDirector::getScreenSize()
 {
-#if ( CC_TARGET_PLATFORM ==  CC_PLATFORM_WIN32)
-	//MoveWindow(mWindowsConsole, 0, 0, aSize.width, aSize.height, TRUE);
-	//SetWindowPos(mWindowsConsole, NULL, 0, 0, aSize.width, aSize.height, SWP_NOZORDER);
-	//CenterWindow(mWindowsConsole);
-#endif
+	return mScreenSize;
 }
 
-void GameDirector::setFullScreen(bool aIsFullScreen)
+void GameDirector::updateWindowSize()
 {
-#if ( CC_TARGET_PLATFORM ==  CC_PLATFORM_WIN32)
-	if (aIsFullScreen)
+	auto director = Director::getInstance();
+	if (director)
 	{
-		//system("mode 650");
-		//SetConsoleDisplayMode(mWindowsConsole, CONSOLE_FULLSCREEN_MODE, 0);
-		//SendMessage(mWindowsConsole, WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
-	}
-	else
-	{
-		//SetConsoleDisplayMode(mWindowsConsole, CONSOLE_WINDOWED_MODE, 0);
-		//ShowWindow(mWindowsConsole, SW_MAXIMIZE);
-		//SendMessage(mWindowsConsole, WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
-	}
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
+		if (mIsFullScreen)
+		{
+			mGLView = GLViewImpl::createWithFullScreen("ZeteraChronicle");
+		}
+		else
+		{
+			auto designResolutionSize = GD->getScreenSize();
+			mGLView = GLViewImpl::createWithRect("ZeteraChronicle", Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+		}
+#else
+		aGLView = GLViewImpl::create("ZeteraChronicle");
 #endif
-}
-
-void GameDirector::Draw()
-{
-
-}
-
-void GameDirector::run()
-{
-	update(0.0f);
-}
-
-void GameDirector::update(float aDelta)
-{
-	if (isCloseApp)
-	{
-
 	}
+
+	director->setOpenGLView(mGLView);
+
+	director->setDisplayStats(true);
+
+	director->setAnimationInterval(1.0f / 60);
+
+	if (!mIsFullScreen)
+	{
+		auto designResolutionSize = GD->getScreenSize();
+		mGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
+		auto frameSize = mGLView->getFrameSize();
+
+		/*if (frameSize.height > mediumResolutionSize.height)
+		{
+			director->setContentScaleFactor(MIN(largeResolutionSize.height / designResolutionSize.height, largeResolutionSize.width / designResolutionSize.width));
+		}
+		else if (frameSize.height > smallResolutionSize.height)
+		{
+			director->setContentScaleFactor(MIN(mediumResolutionSize.height / designResolutionSize.height, mediumResolutionSize.width / designResolutionSize.width));
+		}
+		else
+		{
+			director->setContentScaleFactor(MIN(smallResolutionSize.height / designResolutionSize.height, smallResolutionSize.width / designResolutionSize.width));
+		}*/
+	}
+}
+
+void GameDirector::openScene()
+{
+	auto director = Director::getInstance();
+
+	auto scene = HelloWorld::createScene();
+
+	director->runWithScene(scene);
 }

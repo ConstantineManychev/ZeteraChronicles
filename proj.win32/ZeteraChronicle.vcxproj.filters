@@ -51,6 +51,9 @@
     <ClCompile Include="..\Classes\Managers\GameDirector.cpp">
       <Filter>win32\src\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Views\Scenes\HelloWorldScene.cpp">
+      <Filter>win32\src\Views\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -77,10 +80,16 @@
     <ClInclude Include="..\Classes\Managers\GameDirector.h">
       <Filter>win32\src\Managers</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Views\Scenes\HelloWorldScene.h">
+      <Filter>win32\src\Views\Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
       <Filter>resource</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
