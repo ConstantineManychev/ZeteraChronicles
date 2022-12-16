@@ -28,15 +28,15 @@
     <Filter Include="win32\src\Managers">
       <UniqueIdentifier>{89a78461-5da4-4a4c-afac-4b867f136642}</UniqueIdentifier>
     </Filter>
+    <Filter Include="win32\src\Managers\Data">
+      <UniqueIdentifier>{065de141-ccbf-4aa1-a0b7-e25dacd0da23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>win32\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\DataManager.cpp">
       <Filter>win32\src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Base\BaseObject.cpp">
@@ -54,15 +54,21 @@
     <ClCompile Include="..\Classes\Views\Scenes\HelloWorldScene.cpp">
       <Filter>win32\src\Views\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Managers\Data\DataManager.cpp">
+      <Filter>win32\src\Managers\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Managers\Data\EncryptionFileManager.cpp">
+      <Filter>win32\src\Managers\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Managers\Data\IngameCache.cpp">
+      <Filter>win32\src\Managers\Data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>win32\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\DataManager.h">
       <Filter>win32\src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Base\BaseObject.h">
@@ -82,6 +88,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Views\Scenes\HelloWorldScene.h">
       <Filter>win32\src\Views\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Managers\Data\DataManager.h">
+      <Filter>win32\src\Managers\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Managers\Data\EncryptionFileManager.h">
+      <Filter>win32\src\Managers\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Managers\Data\IngameCache.h">
+      <Filter>win32\src\Managers\Data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

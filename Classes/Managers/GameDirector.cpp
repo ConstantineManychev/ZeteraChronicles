@@ -6,12 +6,16 @@
 
 USING_NS_CC;
 
+#define CREATE_MANAGER(aObject, aClass)           if (aObject == nullptr) { aObject = new  aClass(); }
+#define CREATE_MANAGER_WITH_INIT(aObject, aClass)           if (aObject == nullptr) { aObject = new  aClass(); aObject->init(); } 
+
 GameDirector::GameDirector()
 	: mGLView(nullptr)
 	, mGameAspectRatio(eGameAspectRatio::_UNDEF)
 	, mAppTime(0)
 	, mIsFullScreen(true)
 	, mScreenSize(Size(1024, 768))
+	, mEncryptionFileManager(nullptr)
 {
 
 }
@@ -103,4 +107,12 @@ void GameDirector::openScene()
 	auto scene = HelloWorld::createScene();
 
 	director->runWithScene(scene);
+}
+
+
+
+EncryptionFileManager* GameDirector::getEncryptionFileManager()
+{
+	CREATE_MANAGER(mEncryptionFileManager, EncryptionFileManager);
+	return mEncryptionFileManager;
 }
